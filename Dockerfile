@@ -34,8 +34,9 @@ RUN git clone --depth=1 https://boringssl.googlesource.com/boringssl /usr/src/bo
 #		&& sed -i 's@\$shaext[ ]*=[ ]*0;@\$shaext = 1;@' /usr/src/boringssl/crypto/*/asm/*.pl \
 #		&& sed -i 's@\$avx[ ]*=[ ]*[0|1];@\$avx = 2;@' /usr/src/boringssl/crypto/*/asm/*.pl \
 #		&& sed -i 's@\$addx[ ]*=[ ]*0;@\$addx = 1;@' /usr/src/boringssl/crypto/*/asm/*.pl \
-		&& mkdir -p /usr/src/boringssl/build /usr/lib/boringssl/lib /usr/lib/boringssl/include \
-		&& ln -sf /usr/src/boringssl/include/openssl /usr/lib/boringssl/include/openssl \
+		&& mkdir -p /usr/src/boringssl/build /usr/lib/boringssl/lib /usr/lib/boringssl/include/ \
+		&& mv /usr/src/boringssl/include/openssl /usr/lib/boringssl/include/ \
+		&& ln -sf /usr/lib/boringssl/include/openssl /usr/src/boringssl/include/openssl \
 		&& touch /usr/lib/boringssl/include/openssl/ssl.h \
 		&& cmake -B/usr/src/boringssl/build -H/usr/src/boringssl \
 		&& make -C/usr/src/boringssl/build -j$(getconf _NPROCESSORS_ONLN) \
