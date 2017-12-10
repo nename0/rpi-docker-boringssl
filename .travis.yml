@@ -1,0 +1,8 @@
+
+script:
+# trigger dockerhub build
+- curl "https://registry.hub.docker.com/u/nename0/rpi-docker-boringssl/trigger/$TRIGGER_SECRET"
+
+branches:
+  only:
+  - master
