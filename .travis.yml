@@ -1,7 +1,8 @@
 
 script:
 # trigger dockerhub build
-- curl "https://registry.hub.docker.com/u/nename0/rpi-docker-boringssl/trigger/$TRIGGER_SECRET"
+- >
+   curl -H 'Content-Type: application/json' --data '{build: true}' -X POST "https://registry.hub.docker.com/u/nename0/rpi-docker-boringssl/trigger/$TRIGGER_SECRET/"
 
 branches:
   only:
