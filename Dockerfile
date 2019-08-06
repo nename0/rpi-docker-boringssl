@@ -1,7 +1,7 @@
 #SOURCE https://github.com/nginx-modules/docker-nginx-boringssl
 
 # Pull base image
-FROM resin/armhf-alpine:latest as builder
+FROM balenalib/armv7hf-alpine:latest as builder
 
 RUN [ "cross-build-start" ]
 
@@ -16,7 +16,7 @@ RUN apk add --no-cache --virtual .build-deps \
 		curl \
 		gcc \
 		git \
-		go \
+		go=1.12.7-r0 \
 		libc-dev \
 		libgcc \
 		libstdc++ \
