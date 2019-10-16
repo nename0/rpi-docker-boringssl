@@ -16,7 +16,7 @@ RUN apk add --no-cache --virtual .build-deps \
 		curl \
 		gcc \
 		git \
-		go=1.12.7-r0 \
+		go \
 		libc-dev \
 		libgcc \
 		libstdc++ \
