@@ -5,7 +5,7 @@ FROM balenalib/armv7hf-alpine:latest as builder
 
 RUN [ "cross-build-start" ]
 
-RUN RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
+RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
   && apk update \
   && apk add --no-cache --virtual .build-deps \
 		autoconf \
