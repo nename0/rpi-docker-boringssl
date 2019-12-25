@@ -1,11 +1,11 @@
 #SOURCE https://github.com/nginx-modules/docker-nginx-boringssl
 
 # Pull base image
-FROM resin/armhf-alpine:edge as builder
+FROM balenalib/armv7hf-alpine:3.6 as builder
 
 RUN [ "cross-build-start" ]
 
-RUN uname -a
+RUN uname -a && cat /etc/alpine-release
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
   && apk update \
