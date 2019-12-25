@@ -1,7 +1,7 @@
 #SOURCE https://github.com/nginx-modules/docker-nginx-boringssl
 
 # Pull base image
-FROM resin/armhf-alpine:latest as builder
+FROM resin/armhf-alpine:edge as builder
 
 RUN [ "cross-build-start" ]
 
