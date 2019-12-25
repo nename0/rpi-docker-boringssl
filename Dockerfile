@@ -3,9 +3,9 @@
 # Pull base image
 FROM resin/armhf-alpine:latest as builder
 
-RUN uname -a
-
 RUN [ "cross-build-start" ]
+
+RUN uname -a
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
   && apk update \
