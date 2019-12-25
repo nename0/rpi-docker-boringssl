@@ -1,7 +1,7 @@
 #SOURCE https://github.com/nginx-modules/docker-nginx-boringssl
 
 # Pull base image
-FROM balenalib/armv7hf-alpine:3.6 as builder
+FROM balenalib/armv7hf-alpine:3.5 as builder
 
 RUN [ "cross-build-start" ]
 
