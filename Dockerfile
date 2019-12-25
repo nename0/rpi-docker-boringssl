@@ -1,7 +1,9 @@
 #SOURCE https://github.com/nginx-modules/docker-nginx-boringssl
 
 # Pull base image
-FROM balenalib/armv7hf-alpine:latest as builder
+FROM resin/armhf-alpine:latest as builder
+
+RUN uname -a
 
 RUN [ "cross-build-start" ]
 
@@ -18,7 +20,7 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repos
 		curl \
 		gcc \
 		git \
-		go=1.13.4-r1 \
+		go \
 		libc-dev \
 		libgcc \
 		libstdc++ \
