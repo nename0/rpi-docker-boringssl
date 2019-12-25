@@ -18,7 +18,7 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repos
 		curl \
 		gcc \
 		git \
-		go=1.13.3-r1 \
+		go=1.13.4-r0 \
 		libc-dev \
 		libgcc \
 		libstdc++ \
