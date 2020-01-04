@@ -1,9 +1,9 @@
 #SOURCE https://github.com/nginx-modules/docker-nginx-boringssl
 
 # Pull base image
-FROM resin/armhf-alpine:latest as builder
+FROM arm32v7/alpine:latest as builder
 
-RUN [ "cross-build-start" ]
+#RUN [ "cross-build-start" ]
 
 RUN uname -a && cat /etc/alpine-release
 
@@ -49,7 +49,7 @@ RUN git clone --depth=1 https://boringssl.googlesource.com/boringssl /usr/src/bo
 #	&& rm -rf /usr/src/boringssl \
 #	&& apk del .build-deps
 
-RUN [ "cross-build-end" ]
+#RUN [ "cross-build-end" ]
 
 FROM scratch
 

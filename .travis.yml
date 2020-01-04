@@ -1,8 +1,8 @@
 
-script:
-# trigger dockerhub build
-- >
-   curl -X POST "$TRIGGER_SECRET"
+arch: arm64
+services:
+  - docker
+script: docker build .
 
 branches:
   only:
