@@ -2,7 +2,7 @@
 script:
 # trigger dockerhub build
 - >
-   curl -H 'Content-Type: application/json' --data '{}' -X POST "https://cloud.docker.com/api/build/v1/source/af6118f6-05c5-47a9-b96b-32d4e97d51f7/trigger/$TRIGGER_SECRET/call/"
+   curl -X POST "$TRIGGER_SECRET"
 
 branches:
   only:
