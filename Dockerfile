@@ -42,7 +42,7 @@ RUN git clone --depth=1 https://boringssl.googlesource.com/boringssl /usr/src/bo
 		&& mv /usr/src/boringssl/include/openssl /usr/lib/boringssl/include/ \
 		&& ln -sf /usr/lib/boringssl/include/openssl /usr/src/boringssl/include/openssl \
 		&& touch /usr/lib/boringssl/include/openssl/ssl.h \
-		&& cmake -B/usr/src/boringssl/build -H/usr/src/boringssl \
+		&& cmake -B/usr/src/boringssl/build -H/usr/src/boringssl -DCMAKE_BUILD_TYPE=RelWithDebInfo \
 		&& make -C/usr/src/boringssl/build -j$(getconf _NPROCESSORS_ONLN) \
 		&& cp /usr/src/boringssl/build/crypto/libcrypto.a /usr/src/boringssl/build/ssl/libssl.a /usr/lib/boringssl/lib
 
